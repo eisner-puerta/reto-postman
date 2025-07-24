@@ -6,6 +6,7 @@ Bueno, para mejorar esa situación, aquí va una guía práctica para que dejes 
 
 **En este caso hago el ejemplo con java, pero esto funciona con OpenApi, así que busca en tu lenguaje preferido como generar el openapi**
 
+
 ### 📋 Requisitos Previos
 
 Tener instalado Node.js y npm.
@@ -14,7 +15,8 @@ Tener instalado Node.js y npm.
 ### Agrega SpringDoc OpenAPI a tu API con WebFlux
 
 Agrega esto a tu build.gradle o pom.xml:
- implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.8.3'
+
+implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.8.3'
 
 
 ### ⚙️ Instalar OpenAPI Generator CLI
