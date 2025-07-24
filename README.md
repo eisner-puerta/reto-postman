@@ -19,11 +19,13 @@ Agrega esto a tu build.gradle o pom.xml:
 implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.8.3'
 
 
+
 ### ⚙️ Instalar OpenAPI Generator CLI
 
 Instala la herramienta globalmente usando npm:
 
 npm install -g @openapitools/openapi-generator-cli
+
 
 
 ### 📥 Descargar el archivo OpenAPI (YAML)
@@ -33,12 +35,15 @@ Ejecuta el siguiente comando para obtener la especificación OpenAPI del API:
 curl -o api-docs.yaml http://localhost:8080/v3/api-docs.yaml
 
 
+
 ### 📦 Generar la Colección de Postman
 
 Usa el generador para crear la colección Postman a partir del archivo api-docs.yaml:
 
 
 openapi-generator-cli generate -i api-docs.yaml -g postman-collection -o postman_collection
+
+
 
 ### 📤 Importar la colección en Postman
 
@@ -51,6 +56,8 @@ Sigue estos pasos para importar la colección generada en Postman:
 5. Haz clic en **Importar**.
 
 > ✅ ¡Listo! Ahora puedes ejecutar las solicitudes definidas en tu API directamente desde Postman.
+
+
 
 #Importante
 
