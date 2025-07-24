@@ -295,7 +295,7 @@ public class Product {
 ```
 
 
-###Ideas adicionales
+### Ideas adicionales
 1. Puedes agregar en maven o gradle una tarea para generar automaticamente tu postman collection al compilar o al ejecutar
 2. Puedes agregar tu postman collection en tu repositorio como un artefacto mas
 3. Puedes hacer que todos tus postman collection de todas tus api, se generen en una misma carpeta, con la intención de arrastrar y soltar e importarlos todos a la vez, así mantienes tu postman actualizado.
