@@ -1,7 +1,7 @@
 # Generación de Colección Postman desde OpenAPI
 
 ¿Te ha pasado que llegas a un proyecto y lo primero que necesitas es probar un endpoint… pero no hay Postman, no hay Swagger, no hay nada?
- Le preguntas al último que lo tocó y te dice: “Sí, eso está... pero tengo que buscarlo”.
+ Le preguntas al último que lo trabajó y te dice: “Sí, eso está... pero tengo que buscarlo”.
 Bueno, para mejorar esa situación, aquí va una guía práctica para que dejes todo documentado y exportable con un par de comandos. 😎
 
 **En este caso hago el ejemplo con java, pero esto funciona con OpenApi, así que busca en tu lenguaje preferido como generar el openapi**
