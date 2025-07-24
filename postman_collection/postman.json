@@ -1,16 +1,122 @@
 {
 	"info": {
-		"name": "OpenAPI definition",
+		"name": "Productos",
 		"description": {
-		    "content": "",
+		    "content": "API para gestión de productos",
 		    "type": "text/markdown"
 		},
-		"version": "v0",
+		"version": "1.0.0",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 	        {
-	            "name": "Products",
+	            "name": "Products - getAllProducts",
+	            "item": [
+	                        {
+    "name": "/products",
+                "description": "Devuelve una lista de todos los productos disponibles.",
+                 "item": [
+                            {
+                                "name": "Obtener todos los productos",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Devuelve una lista de todos los productos disponibles."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Products - deleteProduct",
+	            "item": [
+	                        {
+    "name": "/products/:id",
+                "description": "Elimina un producto dado su ID.",
+                 "item": [
+                            {
+                                "name": "Eliminar producto",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "ID del producto a eliminar"
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Elimina un producto dado su ID."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Products - createProduct",
 	            "item": [
 	                        {
     "name": "/products",
@@ -62,154 +168,12 @@
                             ]
                             }
                             ]
-                        },
-	                        {
-    "name": "/products",
-                "description": "Devuelve una lista de todos los productos disponibles.",
-                 "item": [
-                            {
-                                "name": "Obtener todos los productos",
-                                "request": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/products",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "products"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Devuelve una lista de todos los productos disponibles."
-}
-                                ,"response": [
-                            ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/products/:id",
-                "description": "Elimina un producto dado su ID.",
-                 "item": [
-                            {
-                                "name": "Eliminar producto",
-                                "request": {
-    "method": "DELETE",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/products/:id",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "products",
-        ":id"
-    ],
-    "variable": [
-        {
-        "key": "id",
-        "value": "",
-        "description": "ID del producto a eliminar"
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Elimina un producto dado su ID."
-}
-                                ,"response": [
-                            ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/products/:id",
-                "description": "Devuelve un producto específico dado su ID.",
-                 "item": [
-                            {
-                                "name": "Obtener producto por ID",
-                                "request": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/products/:id",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "products",
-        ":id"
-    ],
-    "variable": [
-        {
-        "key": "id",
-        "value": "",
-        "description": "ID del producto"
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Devuelve un producto específico dado su ID."
-}
-                                ,"response": [
-                            ]
-                            }
-                            ]
-                        },
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Products - updateProduct",
+	            "item": [
 	                        {
     "name": "/products/:id",
                 "description": "Actualiza un producto existente por ID.",
@@ -261,6 +225,62 @@
     ]
     },
     "description": "Actualiza un producto existente por ID."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Products - getProductById",
+	            "item": [
+	                        {
+    "name": "/products/:id",
+                "description": "Devuelve un producto específico dado su ID.",
+                 "item": [
+                            {
+                                "name": "Obtener producto por ID",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "ID del producto"
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Devuelve un producto específico dado su ID."
 }
                                 ,"response": [
                             ]

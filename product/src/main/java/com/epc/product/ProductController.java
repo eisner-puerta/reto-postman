@@ -13,12 +13,12 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/products")
-@Tag(name = "Products", description = "Operaciones CRUD sobre productos")
 public class ProductController {
 
     @Operation(
             summary = "Obtener todos los productos",
             description = "Devuelve una lista de todos los productos disponibles.",
+            tags = {"Products - getAllProducts"},
             responses = {
                     @ApiResponse(
                             responseCode = "200",
@@ -33,22 +33,15 @@ public class ProductController {
     @GetMapping
     public List<Product> getAllProducts() {
         return List.of(
-                new Product() {{
-                    setId(1L);
-                    setName("Laptop");
-                    setPrice(1200.0);
-                }},
-                new Product() {{
-                    setId(2L);
-                    setName("Phone");
-                    setPrice(800.0);
-                }}
+                new Product() {{ setId(1L); setName("Laptop"); setPrice(1200.0); }},
+                new Product() {{ setId(2L); setName("Phone"); setPrice(800.0); }}
         );
     }
 
     @Operation(
             summary = "Obtener producto por ID",
             description = "Devuelve un producto específico dado su ID.",
+            tags = {"Products - getProductById"},
             parameters = {
                     @Parameter(name = "id", description = "ID del producto", example = "1", required = true)
             },
@@ -65,16 +58,13 @@ public class ProductController {
     )
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable Long id) {
-        return new Product() {{
-            setId(id);
-            setName("Example Product");
-            setPrice(999.99);
-        }};
+        return new Product() {{ setId(id); setName("Example Product"); setPrice(999.99); }};
     }
 
     @Operation(
             summary = "Crear un nuevo producto",
             description = "Crea un producto nuevo con nombre y precio.",
+            tags = {"Products - createProduct"},
             requestBody = @RequestBody(
                     description = "Datos del producto a crear",
                     required = true,
@@ -83,11 +73,11 @@ public class ProductController {
                             examples = @ExampleObject(
                                     name = "Nuevo producto",
                                     value = """
-                                            {
-                                              "name": "Tablet",
-                                              "price": 499.99
-                                            }
-                                            """
+                            {
+                              "name": "Tablet",
+                              "price": 499.99
+                            }
+                            """
                             )
                     )
             ),
@@ -111,6 +101,7 @@ public class ProductController {
     @Operation(
             summary = "Actualizar producto",
             description = "Actualiza un producto existente por ID.",
+            tags = {"Products - updateProduct"},
             parameters = {
                     @Parameter(name = "id", description = "ID del producto a actualizar", example = "1")
             },
@@ -122,11 +113,11 @@ public class ProductController {
                             examples = @ExampleObject(
                                     name = "Producto actualizado",
                                     value = """
-                                            {
-                                              "name": "Updated Laptop",
-                                              "price": 1100.0
-                                            }
-                                            """
+                            {
+                              "name": "Updated Laptop",
+                              "price": 1100.0
+                            }
+                            """
                             )
                     )
             ),
@@ -150,6 +141,7 @@ public class ProductController {
     @Operation(
             summary = "Eliminar producto",
             description = "Elimina un producto dado su ID.",
+            tags = {"Products - deleteProduct"},
             parameters = {
                     @Parameter(name = "id", description = "ID del producto a eliminar", example = "1")
             },
@@ -162,10 +154,10 @@ public class ProductController {
                                     examples = @ExampleObject(
                                             name = "Respuesta exitosa",
                                             value = """
-                                                    {
-                                                      "message": "Product with id 1 deleted successfully"
-                                                    }
-                                                    """
+                                {
+                                  "message": "Product with id 1 deleted successfully"
+                                }
+                                """
                                     )
                             )
                     )

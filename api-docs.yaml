@@ -1,18 +1,16 @@
 openapi: 3.1.0
 info:
-  title: OpenAPI definition
-  version: v0
+  title: Productos
+  description: API para gestión de productos
+  version: 1.0.0
 servers:
 - url: http://localhost:8080
   description: Generated server url
-tags:
-- name: Products
-  description: Operaciones CRUD sobre productos
 paths:
   /products/{id}:
     get:
       tags:
-      - Products
+      - Products - getProductById
       summary: Obtener producto por ID
       description: Devuelve un producto específico dado su ID.
       operationId: getProductById
@@ -34,7 +32,7 @@ paths:
                 $ref: "#/components/schemas/Product"
     put:
       tags:
-      - Products
+      - Products - updateProduct
       summary: Actualizar producto
       description: Actualiza un producto existente por ID.
       operationId: updateProduct
@@ -69,7 +67,7 @@ paths:
                 $ref: "#/components/schemas/Product"
     delete:
       tags:
-      - Products
+      - Products - deleteProduct
       summary: Eliminar producto
       description: Elimina un producto dado su ID.
       operationId: deleteProduct
@@ -95,7 +93,7 @@ paths:
   /products:
     get:
       tags:
-      - Products
+      - Products - getAllProducts
       summary: Obtener todos los productos
       description: Devuelve una lista de todos los productos disponibles.
       operationId: getAllProducts
@@ -110,7 +108,7 @@ paths:
                   $ref: "#/components/schemas/Product"
     post:
       tags:
-      - Products
+      - Products - createProduct
       summary: Crear un nuevo producto
       description: Crea un producto nuevo con nombre y precio.
       operationId: createProduct
