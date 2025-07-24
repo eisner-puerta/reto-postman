@@ -62,7 +62,10 @@ Sigue estos pasos para importar la colección generada en Postman:
 #Importante
 
 Se debe documentar el controlador y las clases que utilices en el controlador.
-Entre mas información proporciones más información te mostrará en el postman_collection
+
+Entre mas información proporciones más información te mostrará en el postman_collection.
+
+Dile a tu asistente de AI que te ayude a documentar.
 
 ```java
 
