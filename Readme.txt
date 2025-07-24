@@ -1,10 +1,10 @@
-Generación de Colección Postman desde OpenAPI
+# Generación de Colección Postman desde OpenAPI
 
 Este proyecto describe el proceso para generar una colección de Postman a partir de la especificación OpenAPI de una API expuesta en formato YAML.
 
 
 
-📋 Requisitos Previos
+### 📋 Requisitos Previos
 
 
 Tener el API ejecutándose localmente en http://localhost:8080 (ajustar si es diferente).
@@ -15,7 +15,7 @@ Tener habilitada la documentación OpenAPI en el endpoint /v3/api-docs.yaml.
 
 
 
-⚙️ Paso 1: Instalar OpenAPI Generator CLI
+### ⚙️ Paso 1: Instalar OpenAPI Generator CLI
 
 Instala la herramienta globalmente usando npm:
 
@@ -25,28 +25,24 @@ bash
 
 npm install -g @openapitools/openapi-generator-cli
 
-## 📥 Paso 2: Descargar el archivo OpenAPI (YAML)
+### 📥 Paso 2: Descargar el archivo OpenAPI (YAML)
 
 Ejecuta el siguiente comando para obtener la especificación OpenAPI del API:
 
-ash
 curl -o api-docs.yaml http://localhost:8080/v3/api-docs.yaml
 
 
-📦 Paso 3: Generar la Colección de Postman
+### 📦 Paso 3: Generar la Colección de Postman
 
 Usa el generador para crear la colección Postman a partir del archivo api-docs.yaml:
 
-
-bash
- Copy code
 
 openapi-generator-cli generate \
   -i api-docs.yaml \
   -g postman-collection \
   -o postman_collection
 
-## 📤 Paso 4: Importar la colección en Postman
+### 📤 Paso 4: Importar la colección en Postman
 
 Sigue estos pasos para importar la colección generada en Postman:
 
