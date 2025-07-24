@@ -1,48 +1,43 @@
 # Generación de Colección Postman desde OpenAPI
 
-Este proyecto describe el proceso para generar una colección de Postman a partir de la especificación OpenAPI de una API expuesta en formato YAML.
+¿Te ha pasado que llegas a un proyecto y lo primero que necesitas es probar un endpoint… pero no hay Postman, no hay Swagger, no hay nada?
+ Le preguntas al último que lo tocó y te dice: “Sí, eso está... pero tengo que buscarlo”.
+Bueno, para mejorar esa situación, aquí va una guía práctica para que dejes todo documentado y exportable con un par de comandos. 😎
 
 
 
 ### 📋 Requisitos Previos
 
-
-Tener el API ejecutándose localmente en http://localhost:8080 (ajustar si es diferente).
-
 Tener instalado Node.js y npm.
 
-Tener habilitada la documentación OpenAPI en el endpoint /v3/api-docs.yaml.
+
+### Agrega SpringDoc OpenAPI a tu API con WebFlux
+
+Agrega esto a tu build.gradle o pom.xml:
 
 
-
-### ⚙️ Paso 1: Instalar OpenAPI Generator CLI
+### ⚙️ Instalar OpenAPI Generator CLI
 
 Instala la herramienta globalmente usando npm:
 
-
-bash
- Copy code
-
 npm install -g @openapitools/openapi-generator-cli
 
-### 📥 Paso 2: Descargar el archivo OpenAPI (YAML)
+
+### 📥 Descargar el archivo OpenAPI (YAML)
 
 Ejecuta el siguiente comando para obtener la especificación OpenAPI del API:
 
 curl -o api-docs.yaml http://localhost:8080/v3/api-docs.yaml
 
 
-### 📦 Paso 3: Generar la Colección de Postman
+### 📦 Generar la Colección de Postman
 
 Usa el generador para crear la colección Postman a partir del archivo api-docs.yaml:
 
 
-openapi-generator-cli generate \
-  -i api-docs.yaml \
-  -g postman-collection \
-  -o postman_collection
+openapi-generator-cli generate -i api-docs.yaml -g postman-collection -o postman_collection
 
-### 📤 Paso 4: Importar la colección en Postman
+### 📤 Importar la colección en Postman
 
 Sigue estos pasos para importar la colección generada en Postman:
 
