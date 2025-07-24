@@ -1,0 +1,159 @@
+openapi: 3.1.0
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+tags:
+- name: Products
+  description: Operaciones CRUD sobre productos
+paths:
+  /products/{id}:
+    get:
+      tags:
+      - Products
+      summary: Obtener producto por ID
+      description: Devuelve un producto específico dado su ID.
+      operationId: getProductById
+      parameters:
+      - name: id
+        in: path
+        description: ID del producto
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      responses:
+        "200":
+          description: Producto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+    put:
+      tags:
+      - Products
+      summary: Actualizar producto
+      description: Actualiza un producto existente por ID.
+      operationId: updateProduct
+      parameters:
+      - name: id
+        in: path
+        description: ID del producto a actualizar
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      requestBody:
+        description: Datos del producto actualizado
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+            examples:
+              Producto actualizado:
+                description: Producto actualizado
+                value:
+                  name: Updated Laptop
+                  price: 1100.0
+        required: true
+      responses:
+        "200":
+          description: Producto actualizado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+    delete:
+      tags:
+      - Products
+      summary: Eliminar producto
+      description: Elimina un producto dado su ID.
+      operationId: deleteProduct
+      parameters:
+      - name: id
+        in: path
+        description: ID del producto a eliminar
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      responses:
+        "200":
+          description: Producto eliminado
+          content:
+            application/json:
+              examples:
+                Respuesta exitosa:
+                  description: Respuesta exitosa
+                  value:
+                    message: Product with id 1 deleted successfully
+  /products:
+    get:
+      tags:
+      - Products
+      summary: Obtener todos los productos
+      description: Devuelve una lista de todos los productos disponibles.
+      operationId: getAllProducts
+      responses:
+        "200":
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+    post:
+      tags:
+      - Products
+      summary: Crear un nuevo producto
+      description: Crea un producto nuevo con nombre y precio.
+      operationId: createProduct
+      requestBody:
+        description: Datos del producto a crear
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+            examples:
+              Nuevo producto:
+                description: Nuevo producto
+                value:
+                  name: Tablet
+                  price: 499.99
+        required: true
+      responses:
+        "200":
+          description: Producto creado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+components:
+  schemas:
+    Product:
+      type: object
+      description: Modelo que representa un producto
+      properties:
+        id:
+          type: integer
+          format: int64
+          default: "1"
+          description: ID del producto
+          example: 1
+        name:
+          type: string
+          default: Laptop
+          description: Nombre del producto
+          example: Laptop
+        price:
+          type: number
+          format: double
+          default: "1200.0"
+          description: Precio del producto
+          example: 1200.0

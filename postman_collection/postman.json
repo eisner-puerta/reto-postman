@@ -1,0 +1,282 @@
+{
+	"info": {
+		"name": "OpenAPI definition",
+		"description": {
+		    "content": "",
+		    "type": "text/markdown"
+		},
+		"version": "v0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "Products",
+	            "item": [
+	                        {
+    "name": "/products",
+                "description": "Crea un producto nuevo con nombre y precio.",
+                 "item": [
+                            {
+                                "name": "Nuevo producto",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"name\" : \"Tablet\",\n  \"price\" : 499.99\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Crea un producto nuevo con nombre y precio."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/products",
+                "description": "Devuelve una lista de todos los productos disponibles.",
+                 "item": [
+                            {
+                                "name": "Obtener todos los productos",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Devuelve una lista de todos los productos disponibles."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/products/:id",
+                "description": "Elimina un producto dado su ID.",
+                 "item": [
+                            {
+                                "name": "Eliminar producto",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "ID del producto a eliminar"
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Elimina un producto dado su ID."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/products/:id",
+                "description": "Devuelve un producto específico dado su ID.",
+                 "item": [
+                            {
+                                "name": "Obtener producto por ID",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "ID del producto"
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Devuelve un producto específico dado su ID."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/products/:id",
+                "description": "Actualiza un producto existente por ID.",
+                 "item": [
+                            {
+                                "name": "Producto actualizado",
+                                "request": {
+    "method": "PUT",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"name\" : \"Updated Laptop\",\n  \"price\" : 1100.0\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/products/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "products",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "ID del producto a actualizar"
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Actualiza un producto existente por ID."
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+        }
+	]
+}
+
